@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <ui:composition template="/templates/page-template.xhtml">
-    <ui:param name="pageTitle" value="Popular Pictures"/>
-    <ui:define name="panel-main">
-        <section>
-            <h1>Popular Products</h1>
-            <h:form>
-                <section class="product-summary">
-                    <img src="resources/photoalbum/images/Watkins1.jpg" alt="Watkins1" width="80px" height="80px"/>
-                    <h2>Watkins1</h2>
-                    <p>Nature pics in watkins.</p>
-                    <p>Price: $ 5.00 - <h:commandLink>Add to cart</h:commandLink></p>
-                    <p><h:outputLink value="product-details.xhtml">Product Details</h:outputLink></p>
-                </section>
-                <section class="product-summary">
-					<img src="resources/photoalbum/images/Watkins2.jpg" alt="Watkins2" width="80px" height="80px"/>                    
-					<h2>Watkins2</h2>
-                    <p>Cool pic.</p>
-                    <p>Price: $ 5.00 - <h:commandLink>Add to cart</h:commandLink></p>
-                    <p><h:outputLink value="product-details.xhtml">Product Details</h:outputLink></p>
-                </section>
-                <section class="product-summary">
-					<img src="resources/photoalbum/images/Watkins3.jpg" alt="Watkins3" width="80px" height="80px"/>                    
-                    <h2>Watkins3</h2>
-                    <p>One more from watkins.</p>
-                    <p>Price: $ 5.00 - <h:commandLink>Add to cart</h:commandLink></p>
-                    <p><h:outputLink value="product-details.xhtml">Product Details</h:outputLink></p>
-                </section>
-            </h:form>
-        </section>
-    </ui:define>
+	<ui:param name="pageTitle" value="Popular Pictures" />
+	<ui:define name="panel-main">
+		<section>
+
+			<h1>Popular Products</h1>
+			<h:form>
+				<ui:decorate template="templates/image-summary.xhtml">
+					<ui:param name="imageName" value="Watkins1" />
+					<ui:define name="image-description">
+                    	Nature pics in watkins1..
+                    </ui:define>
+					<ui:param name="imagePrice" value="$5.00" />
+				</ui:decorate>
+				<ui:decorate template="templates/image-summary.xhtml">
+					<ui:param name="imageName" value="Watkins2" />
+					<ui:define name="image-description">
+                    	Nature pics in watkins2.
+                    </ui:define>
+					<ui:param name="imagePrice" value="$15.00" />
+				</ui:decorate>
+				<ui:decorate template="templates/image-summary.xhtml">
+					<ui:param name="imageName" value="Watkins3" />
+					<ui:define name="image-description">
+                    	Nature pics in watkins3.
+                    </ui:define>
+					<ui:param name="imagePrice" value="$25.00" />
+				</ui:decorate>
+			</h:form>
+		</section>
+	</ui:define>
 </ui:composition>
 </html>
